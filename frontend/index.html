@@ -10,316 +10,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      transition: margin-left 0.3s;
-    }
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 64px;
-      width: 100%;
-      background-color: white !important;
-      align-items: center;
-      padding: 10px;
-      z-index: 1000;
-      display: flex;
-        flex-direction: row;
-    }
-    .navb {
-      background-color:white;
-      color: #333;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-      font-size: 15px;
-      border-radius: 25px;
-    }
-    .navbar-nav{
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
-    }
-    .d-flex{
-        justify-self: center !important;
-        align-self: center;
-        margin-left:4rem;
-        margin-right: 7rem;
-    }
-    #searchbar{
-        border-radius: 10px;
-        width: 42rem !important;
-        height: 48px;
-        padding: 10px;
-    }
-    .sidebar {
-      position: fixed;
-      top: 64px;
-      left: 0;
-      width: 250px;
-      height: calc(100% - 64px);
-      background-color: white;
-      overflow-x: hidden;
-      transition: transform 0.3s ease;
-      transform: translateX(-250px);
-      z-index: 999;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-    }
-    .sidebar.active {
-      transform: translateX(0);
-    }
-    .compose{
-        border-radius: 16px;
-        margin: 10px;
-        height: 56px;
-        width: 118px;
-        border-color: #555;
-        background-color: white;
-        border-color: #e4e4e4;
-        text-align: center;
-        font-size: 14px;
-        transition: all 0.20s;
-    }
-    .compose:hover{
-        background-color:#e2e2e2ad ;
-        transform: scale(1.05);
-        -webkit-box-shadow: 0px 20px 35px -16px rgba(255, 255, 255, 0.947);
-        -moz-box-shadow: 0px 20px 35px -16px rgb(255, 250, 250);
-        box-shadow: 0px 20px 35px -16px rgba(255, 255, 255, 0.977);  
-    }
-    .sidebaritem{
-        margin:15px 0px 15px 0px ;
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        align-items:baseline;
-        padding-left: 0;
-       
-    }
-    button{
-        background-color: white !important;
-        border-style: hidden !important;
-    }
-    button:hover{
-        background-color: #e2e2e2ad !important;
-        color: #333 ;
-        border-color: #f1f1f1 !important;
-    }
-    .list{
-        background-color: white;
-        width: 250px;
-        text-align: left;
-        padding: 3px;
-        border-bottom-right-radius:20px ;
-        border-top-right-radius:20px ;
-        border-color: #f1f1f1;
-        
-    }
-    .content {
-      margin-top: 56px;
-      padding: 20px;
-      transition: margin-left 0.3s ease;
-    }
-    .content.shifted {
-      margin-left: 250px;
-    }
-    .Countdisplay{
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
-    }
-    .Countdisplay>*{
-        margin:5px;
-        margin-bottom: 10px;
-    }
-    .categorymail>button{
-        width: 260px;
-        text-align: left;
-        border-radius: 0px;
-        color: #333;
-        border-color: #f1f1f1;
-        font-size: 15px;
-        height: 56px;
-    }
-    .categorymail{
-        border-bottom: 1px solid #ddd;
-    }
-    .cat:hover{
-        color:#333;
-    }
-    .cat:active{
-        color:#db3434 !important;
-    }
-    .cat.active {
-            border-bottom: 2px solid !important;
-            border-color: #db3434;
-            background-color: white;
-            color: rgb(234, 54, 54);
-    }
-    /*.mail>button{
-        width: 250px;
-        text-align: left;
-        border-radius: 0px;
-        color: #333;
-        border-color: #f1f1f1;
-        font-size: 15px;
-        height: 56px;
-    }
-    .email1{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-content: center;
-    }
-    a.fill-div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-content: center;
-        height: 100%;
-        width: 100%;
-        text-decoration: none;
-    }*/
-    /*.star{
-        justify-self: left;
-    }
-    .select{
-        justify-self: left;
-        justify-items: left;
-    }
-    .mail{
-        display: flex;
-        flex-direction: row;
-        justify-content:left;
-        white-space: nowrap;
-        overflow:hidden;
-        width: 800px;
-        text-overflow: ellipsis;
-    }
-    .mail > *{
-        color:#333;
-        text-decoration: none;
-        margin-right: 16px;
-        overflow: hidden;
-        text-overflow: ellipsis !important;
-        
-    }
-    .mail>span{
-        flex: 1;
-        justify-self: left;
-        
-    }*/
-    a.fill-div{
-        display: grid;
-        grid-template-columns: 30px 30px minmax(150px, 20%) minmax(0, 1fr) 80px;
-        align-items: center;
-        justify-content:left;
-        gap: 12px;
-        
-    }
-    .mail-container {
-        box-sizing: border-box;
-        width: 100%;
-        overflow-x: hidden; 
-        text-overflow: ellipsis;
-        padding: 10px 16px;
-    }
-
-    .mail {
-        height: 38px;
-        padding: 4px !important;
-        border-bottom: 1px solid #ddd;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .mail:hover{
-        border:1px solid;
-        border-color: #898989;
-        box-shadow: 2px 2px 2px 0px rgba(39, 39, 39, 0.2), 2px 2px 2px 0px rgba(36, 36, 36, 0.19);
-  
-    }
-    .fill-div:hover>*{
-        
-    }
-    .mail > * {
-        text-decoration: none;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .select{
-        grid-column: 1;
-    }
-    .star{
-        grid-column: 2;
-    }
-    .select:hover{
-        cursor:pointer;
-    }
-    .mailsender {
-        grid-column: 3;
-        color: #333;
-    }
-    .mailbody {
-        grid-column: 4;
-        color: #777;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        
-    }
-    .icons {
-        display: flex;
-        gap: 8px;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-
-    .mail-row:hover .icons {
-        opacity: 1;
-    }
-
-    .icon {
-        width: 20px;
-        height: 20px;
-        background-color: transparent;
-        mask-size: cover;
-        cursor: pointer;
-    }
-
-    /*.copy { mask-image: url('/icons/copy.svg'); }
-    .delete { mask-image: url('/icons/delete.svg'); }
-    .mark { mask-image: url('/icons/mark.svg'); }
-    .snooze { mask-image: url('/icons/snooze.svg'); }*/
-
-    .time {
-        grid-column: 5;
-        text-align: right;
-        white-space: nowrap;
-        font-size: 12px;
-        color:#555;
-        padding-right: 1rem;
-        font-size: 15px;
-    }
+    
 </style>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <button class="navb btn btn-primary me-2" onclick="toggleSidebar()" data-bs-toggle="offcanvas" data-bs-target="#leftOffcanvas">☰</button>
+        <button class="navb btn btn-primary me-2" onclick="toggleSidebar()" data-bs-toggle="offcanvas" data-bs-target="#leftOffcanvas"><img src="icons/dashes3.png"></button>
         <img src="./icons/Gmail.png">
         
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <form class="d-flex" role="search">
-            <input class="form-control me-2" id="searchbar" type="search" placeholder="Search mail" aria-label="Search">
-            <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
+            <div class="form-control me-2" id="searchbar" type="search" placeholder="Search mail" aria-label="Search">
+                <img src="icons/search.png"> <p>Search mails</p>
+                <svg width="10" height="5" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.416443 0.250056L4.99978 4.83339L9.58311 0.250056H0.416443Z" fill="black" fill-opacity="0.54"/>
+                </svg>
+
+            </div>
             </form>
             <button class="nav-link" href="#"><img src="icons/help.png"></button>
-            <button class="nav-link" href="#"><img src="icons/settings.png"></button>
+            <button class="nav-link" href="#"><img width="25" height="25" style="filter: opacity(53%);"src="https://img.icons8.com/ios-filled/50/settings.png" alt="settings"/></button>
             <button class="nav-link" href="#"><img src="icons/Apps.png"></button>
             <button class="nav-link" href="#"><img src="icons/Avatar.png"></button>
             
@@ -330,44 +41,75 @@
 
     
     <div id="sidebar" class="sidebar">
-        <button class="Sidebarb compose">Compose</button>
+        <button class="compose-button">
+        <div class="compose-icon">
+            <div class="plus-horizontal">
+                <div class="plus-horizontal-left red"></div>
+                <div class="plus-horizontal-right green"></div>
+            </div>
+            <div class="plus-vertical">
+                <div class="plus-vertical-top blue"></div>
+                <div class="plus-vertical-bottom yellow"></div>
+            </div>
+        </div>
+        <p>Compose</p>
+    </button>
         <ul class="sidebaritem">
-        <button class="Sidebarb list">Inbox</button>
-        <button class="Sidebarb list">Starred</button>
-        <button class="Sidebarb list">Snoozed</button>
-        <button class="Sidebarb list">Sent</button>
-        <button class="Sidebarb list">Drafts</button>
-        <button class="Sidebarb list">More</button>
+        <button class="Sidebarb list" style="color:#d93025; background-color: #ffc8c481 !important;"><img src="icons/Vector.png"><p>Inbox</p></button>
+        <button class="Sidebarb list"><img src="icons/Vector-1.png"><p>Starred</p></button>
+        <button class="Sidebarb list"><img src="icons/Vector-2.png"><p>Snoozed</p></button>
+        <button class="Sidebarb list"><img src="icons/Vector-3.png"><p>Sent</p></button>
+        <button class="Sidebarb list"><img src="icons/Vector-4.png"><p>Drafts</p></button>
+        <button class="Sidebarb list"><img src="icons/Vector-5.png"><p>Spam</p></button>
+        <button class="Sidebarb list"><img src="icons/Vector-6.png"><p>Trash</p></button>
+        <button class="Sidebarb list"><img src="icons/Vector-7.png"><p>Categories</p></button>
+        <button class="Sidebarb list"><img src="icons/Vector-8.png"><p>More</p></button>
+        
         </ul>
-        <button class="sidebarb label">Labels +</button>
     </div>
 
 
   <div id="mainContent" class="content">
     <div class="Countdisplay">
         <p>1-50 of 2619</p>
-        <button>◀️</button>
-        <button>▶️</button>
+        <button><img src="icons/arrowL.png"></button>
+        <button><img src="icons/arrowR.png"></button>
     </div>
     <div class="main">
         <div class="btn-group btn-group-lg categorymail" role="group" aria-label="Large button group">
-            <button type="button" class="cat cat0 btn btn-outline-primary active" onclick="fetchMails(0)">Primary</button>
-            <button type="button" class="cat cat1 btn btn-outline-primary"  onclick="fetchMails(1)">Socials</button>
-            <button type="button" class="cat cat2 btn btn-outline-primary" onclick="fetchMails(2)">Promotions</button>
-            <button type="button" class="cat cat3 btn btn-outline-primary"onclick="fetchMails(3)">Updates</button>
+            <button type="button" class="cat cat0 btn btn-outline-primary active" onclick="fetchMails(0)">
+                <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                </svg>Primary
+            </button>
+            <button type="button" class="cat cat1 btn btn-outline-primary"  onclick="fetchMails(1)">
+                <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                </svg>  
+                Socials
+            </button>
+            <button type="button" class="cat cat2 btn btn-outline-primary" onclick="fetchMails(2)">
+                 <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+                </svg>  
+                Promotions
+            </button>
+            <button type="button" class="cat cat3 btn btn-outline-primary"onclick="fetchMails(3)">
+                <svg class="icon-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 0.833328C4.94004 0.833328 0.833374 4.93999 0.833374 10C0.833374 15.06 4.94004 19.1667 10 19.1667C15.06 19.1667 19.1667 15.06 19.1667 10C19.1667 4.93999 15.06 0.833328 10 0.833328ZM10.9167 14.5833H9.08337V9.08333H10.9167V14.5833ZM10.9167 7.25H9.08337V5.41666H10.9167V7.25Z" />
+                </svg>
+
+                Updates
+            </button>
         </div>
         <div class="emails">
             <div class="email1">
                    <div id="mailcontainer">
-                    </div>
-                    <!--<p class="sender">Sender</p>
-                    <p class="subject">Subject</p>
-                    <p class="date">date</p>-->
+                   </div>
                 </a>
             </div>
         </div>
     </div>
-    
   </div>
 
 

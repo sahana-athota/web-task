@@ -1,0 +1,402 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: margin-left 0.3s;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 64px;
+      width: 100%;
+      background-color: white !important;
+      align-items: center;
+      padding: 10px;
+      z-index: 1000;
+      display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #ddd;
+    }
+    .navb {
+      background-color:white;
+      color: #333;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 15px;
+      border-radius: 25px;
+    }
+    .navbar-nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    .me-2{
+        margin-right: 0px !important;
+        
+    }
+    .d-flex{
+        justify-self: center !important;
+        align-self: center;
+        margin-left:3rem !important;
+        margin-right: 13rem;
+    }
+    #searchbar{
+        border-radius: 10px;
+        min-width:  39rem;
+        height: 48px;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: baseline;
+        background-color: #F1F3F4;
+    }
+    #searchbar>img{
+        width: 17px;
+        height: 17px;
+        margin: 5px 10px 0px 8px;
+    }
+    #searchbar>p{
+        flex-grow: 1;
+        margin-left: 5px;
+        color:#6c6c6c;
+    }
+    #searchbar>svg{
+        justify-self:center !important;
+        display: flex;
+        margin-top: 8px;
+    }
+    .sidebar {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      width: 250px;
+      height: calc(100% - 64px);
+      background-color: white;
+      overflow-x: hidden;
+      transition: transform 0.3s ease;
+      transform: translateX(-250px);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+    }
+    .Sidebarb{
+        display: flex;
+        flex-direction: row;
+        height: 34px !important;
+        padding-left: 14px !important;
+        
+    }
+    .Sidebarb>img{
+        padding-top: 5px !important;
+        width:17px !important;
+        height:22px !important;
+        margin-right: 7px !important;
+    }
+    .Sidebarb>p{
+        margin-left: 7px !important;
+        margin-top: 1px;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    .compose-button {
+        height:54px !important;
+        width: 135px !important;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        background-color: #fff;
+        text-align: center;
+        color: #3c4043;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 16px 24px 16px 16px !important;
+        border-radius: 24px;
+        box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3),
+                    0 4px 8px rgba(60, 64, 67, 0.15);
+        cursor: pointer;
+        border: none;
+        transition: box-shadow 0.2s ease;
+        user-select: none;
+        margin-left: 15px;
+        margin-top: 18px !important;
+    }
+    .compose-button>p{
+        margin:1px 0px 0px 16px;
+    }
+    .compose-button:hover {
+        box-shadow: 0 1px 3px rgba(60, 64, 67, 0.4),
+                    0 4px 12px rgba(60, 64, 67, 0.2);
+    }
+
+    .compose-button:active {
+        box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3);
+        background-color: #f6f8fc;
+    }
+.compose-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 29px;
+        height: 29px;
+        position: relative;
+    }
+    .plus-horizontal {
+        position: absolute;
+        width: 20px;
+        height: 4px;
+        top: 10px;
+        left: 2px;
+    }
+    .plus-vertical {
+        position: absolute;
+        width: 4px;
+        height: 20px;
+        top: 2px;
+        left: 10px;
+    }
+    .red {
+        background-color: #ea4335;
+    }
+    .green {
+        background-color: #34a853;
+    }
+    .yellow {
+        background-color: #fbbc04;
+    }
+    .blue {
+        background-color: #4285f4;
+    }
+    .plus-horizontal-left {
+        position: absolute;
+        width: 10px;
+        height: 4px;
+        top: 0;
+        left: 0;
+    }
+    .plus-horizontal-right {
+        position: absolute;
+        width: 10px;
+        height: 4px;
+        top: 0;
+        right: 0;
+    }
+    .plus-vertical-top {
+        position: absolute;
+        width: 4px;
+        height: 10px;
+        top: 0;
+        left: 0;
+    }
+    .plus-vertical-bottom {
+        position: absolute;
+        width: 4px;
+        height: 10px;
+        bottom: 0;
+        left: 0;
+    }
+    .sidebaritem{
+        margin:15px 0px 15px 0px ;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items:baseline;
+        padding-left: 0;
+    }
+    button{
+        background-color: white !important;
+        border-style: hidden !important;
+    }
+    button:hover{
+        background-color: #e2e2e2ad !important;
+        color: #333 ;
+        border-color: #f1f1f1 !important;
+    }
+    .list{
+        background-color: white;
+        width: 250px;
+        text-align: left;
+        padding: 3px;
+        border-bottom-right-radius:20px ;
+        border-top-right-radius:20px ;
+        border-color: #f1f1f1;
+    }
+    #mainContent{
+        margin-right: 70px;
+    }
+    .content {
+      margin-top: 56px;
+      padding: 20px;
+      transition: margin-left 0.3s ease;
+    }
+    .content.shifted {
+      margin-left: 250px;
+    }
+    .Countdisplay{
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+    .Countdisplay>*{
+        margin:5px;
+        margin-bottom: 10px;
+    }
+    .categorymail>button{
+        width: 220px;
+        text-align: left;
+        border-radius: 0px;
+        color: #333;
+        border-color: #f1f1f1;
+        font-size: 15px;
+        height: 56px;
+        flex: 1;
+        transition: color 0.2s ease, border-bottom 0.2s ease;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        border-top: 3px solid transparent;
+        padding-left: 10px !important;
+        
+    }
+    .cat:hover{
+        color:#333;
+    }
+    .cat:active{
+        color:#db3434 !important;
+    }
+    .cat.active {
+        border-bottom: 2px solid !important;
+        border-color: #db3434;
+        background-color: white;
+        color: rgb(234, 54, 54);
+    }
+   .icon-svg {
+        width: 25px !important;
+        height: 25px !important;
+        fill: #5f6368;
+        transition: fill 0.2s ease;
+    }
+    .cat.active .icon-svg {
+        fill: #d93025;
+    }
+    .fill-div{
+        display: grid;
+        grid-template-columns: 20px 20px 20px 14rem minmax(0, 1fr) 80px;
+        align-items: center;
+        justify-content:left;
+        gap: 12px;
+        
+    }
+    #mailcontainer{
+        border-top: 1px solid #ddd !important;
+    }
+    .mail {
+        height: 38px;
+        padding: 4px !important;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .mail:hover{
+        border-top:1px solid;
+        border-bottom:1px solid;
+        border-color: #898989;
+        box-shadow: 2px 2px 2px 0px rgba(39, 39, 39, 0.2), 2px 2px 2px 0px rgba(36, 36, 36, 0.19);
+    }
+    .mail:hover .mailbody{
+        margin-right: 150px;
+    }
+    .mail > * {
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .select{
+        grid-column: 1;
+    }
+    .star{
+        grid-column: 2;
+        color: #d8d8d8;
+        cursor: pointer;
+        padding: 0 !important;
+    }
+    .star.active {
+        color: #f6bf26;
+    }
+    .select:hover{
+        cursor:pointer;
+    }
+    .arro{
+        grid-column: 3;
+    }
+    .mailsender {
+        grid-column: 4;
+        color: #333;
+    }
+    .mailbody {
+        grid-column: 5;
+        color: #333;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding:2px !important;
+    }
+    .time {
+        grid-column: 6;
+        text-align: right;
+        white-space: nowrap;
+        font-size: 12px;
+        color:#555;
+        padding-right: 1rem;
+        font-size: 15px;
+    }
+    .fill-div:hover .time{
+        opacity: 0;
+    }
+    
+    .mail:hover .action-icons{
+        display: block !important;
+    }
+    .action-icons {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        white-space: nowrap;
+    }
+    .action-icon {
+        padding: 4px;
+        margin-left: 8px;
+        color: #5f6368;
+        cursor: pointer;
+        border-radius: 4px;
+        display: inline-block;
+    }
+    .time-container {
+        grid-column: 6;
+        text-align: right;
+        white-space: nowrap;
+        position: relative;
+    }
+    .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        vertical-align: middle;
+    }

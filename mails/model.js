@@ -37,3 +37,4 @@ const MailSchema = new mongoose.Schema({
 });
 
 export default mongoose.model("Mail", MailSchema);
+
